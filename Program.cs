@@ -44,7 +44,7 @@ namespace SierpinskiTeppich
             }
             else
             {
-                rectangle.FillRectangle(brush, Convert.ToInt16(width / 3.0), Convert.ToInt16(height / 3.0), Convert.ToInt16(width / 3.0), Convert.ToInt16(height / 3.0));
+                //rectangle.FillRectangle(brush, Convert.ToInt16(width / 3.0), Convert.ToInt16(height / 3.0), Convert.ToInt16(width / 3.0), Convert.ToInt16(height / 3.0));
 
                 float width1 = width / 3;
                 float xLeft = x;
