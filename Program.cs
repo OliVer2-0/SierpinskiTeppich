@@ -40,27 +40,34 @@ namespace SierpinskiTeppich
             // Rekursion
             // Zuerst einmal zeichnen, anschließend für die 8 neuen Rechtecke
             Graphics rectangle = g;
-             if(iteration == 0)
+
+            if(iteration == 0)
             {
                 g.FillRectangle(Brushes.White, x, y, width, height);
             }
             else
             {
                 rectangle.FillRectangle(brush, Convert.ToInt16(width / 3.0), Convert.ToInt16(height / 3.0), Convert.ToInt16(width / 3.0), Convert.ToInt16(height / 3.0));
-                float x1 = x / 3;
-                float y1 = y / 3;
+
                 float width1 = width / 3;
+                float xLeft = x;
+                float xMiddle = xLeft + width1;
+                float xRight = xLeft + (width1 * 2f);
+                
                 float height1 = height / 3;
+                float yTop = y;
+                float yMiddle = yTop + height1;
+                float yBottom = yTop + (height1 * 2f);
 
 
-                SierpinskiTeppich(g, brush, x1, y1, width1, height1, iteration - 1);
-                SierpinskiTeppich(g, brush, x1, y1, width1, height1, iteration - 1);
-                SierpinskiTeppich(g, brush, x1, y1, width1, height1, iteration - 1);
-                SierpinskiTeppich(g, brush, x1, y1, width1, height1, iteration - 1);
-                SierpinskiTeppich(g, brush, x1, y1, width1, height1, iteration - 1);
-                SierpinskiTeppich(g, brush, x1, y1, width1, height1, iteration - 1);
-                SierpinskiTeppich(g, brush, x1, y1, width1, height1, iteration - 1);
-                SierpinskiTeppich(g, brush, x1, y1, width1, height1, iteration - 1);
+                SierpinskiTeppich(g, brush, xLeft, yTop, width1, height1, iteration - 1);
+                SierpinskiTeppich(g, brush, xMiddle, yTop, width1, height1, iteration - 1);
+                SierpinskiTeppich(g, brush, xRight, yTop, width1, height1, iteration - 1);
+                SierpinskiTeppich(g, brush, xLeft, yMiddle, width1, height1, iteration - 1);
+                SierpinskiTeppich(g, brush, xRight, yMiddle, width1, height1, iteration - 1);
+                SierpinskiTeppich(g, brush, xLeft, yBottom, width1, height1, iteration - 1);
+                SierpinskiTeppich(g, brush, xMiddle, yBottom, width1, height1, iteration - 1);
+                SierpinskiTeppich(g, brush, xRight, yBottom, width1, height1, iteration - 1);
 
             }
 
