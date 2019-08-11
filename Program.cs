@@ -40,10 +40,29 @@ namespace SierpinskiTeppich
             // Rekursion
             // Zuerst einmal zeichnen, anschließend für die 8 neuen Rechtecke
             Graphics rectangle = g;
+             if(iteration == 0)
+            {
+                g.FillRectangle(Brushes.White, x, y, width, height);
+            }
+            else
+            {
+                rectangle.FillRectangle(brush, Convert.ToInt16(width / 3.0), Convert.ToInt16(height / 3.0), Convert.ToInt16(width / 3.0), Convert.ToInt16(height / 3.0));
+                float x1 = x / 3;
+                float y1 = y / 3;
+                float width1 = width / 3;
+                float height1 = height / 3;
 
-            if(iteration >0)
-            rectangle.FillRectangle(brush,Convert.ToInt16(width / 3.0), Convert.ToInt16(height / 3.0), Convert.ToInt16(width / 3.0), Convert.ToInt16(height/ 3.0));
 
+                SierpinskiTeppich(g, brush, x1, y1, width1, height1, iteration - 1);
+                SierpinskiTeppich(g, brush, x1, y1, width1, height1, iteration - 1);
+                SierpinskiTeppich(g, brush, x1, y1, width1, height1, iteration - 1);
+                SierpinskiTeppich(g, brush, x1, y1, width1, height1, iteration - 1);
+                SierpinskiTeppich(g, brush, x1, y1, width1, height1, iteration - 1);
+                SierpinskiTeppich(g, brush, x1, y1, width1, height1, iteration - 1);
+                SierpinskiTeppich(g, brush, x1, y1, width1, height1, iteration - 1);
+                SierpinskiTeppich(g, brush, x1, y1, width1, height1, iteration - 1);
+
+            }
 
         }
         override protected void OnKeyDown(KeyEventArgs e)
