@@ -8,11 +8,13 @@ namespace SierpinskiTeppich
     class Sierpinski : Form
     {
         int iteration = 0;
+        
         public Sierpinski()
         {
             Width = 600;
             Height = 600;
-            Text = "Sierpinski-Teppich"; 
+            Text = "Sierpinski-Teppich";
+            ResizeRedraw = true;
         }
         static void Main()
         {
@@ -20,6 +22,7 @@ namespace SierpinskiTeppich
         }
         override protected void OnPaint(PaintEventArgs e)
         {
+            base.OnPaint(e);
             RectangleF bounds = e.Graphics.VisibleClipBounds; // um die Groesse des sichtbaren Bereichs zu ermitteln
 
             //Brush und Graphics-Object anlegen zur Übergabe an rekursive Methode
@@ -27,7 +30,6 @@ namespace SierpinskiTeppich
 
             //Aufruf der rekusriven Methode
             SierpinskiTeppich(e.Graphics, solidBrush, bounds.X, bounds.Y, bounds.Width, bounds.Height, iteration);
-
             
 
         }
@@ -44,7 +46,7 @@ namespace SierpinskiTeppich
             }
             else
             {
-                //rectangle.FillRectangle(brush, Convert.ToInt16(width / 3.0), Convert.ToInt16(height / 3.0), Convert.ToInt16(width / 3.0), Convert.ToInt16(height / 3.0));
+                rectangle.FillRectangle(brush, Convert.ToInt16(width / 3.0), Convert.ToInt16(height / 3.0), Convert.ToInt16(width / 3.0), Convert.ToInt16(height / 3.0));
 
                 float width1 = width / 3;
                 float xLeft = x;
