@@ -27,7 +27,7 @@ namespace SierpinskiTeppich
             RectangleF bounds = e.Graphics.VisibleClipBounds; // um die Groesse des sichtbaren Bereichs zu ermitteln
 
             //Brush und Graphics-Object anlegen zur Übergabe an rekursive Methode
-            SolidBrush solidBrush = new SolidBrush(Color.Black);
+            SolidBrush solidBrush = new SolidBrush(Color.DarkBlue);
 
             //Aufruf der rekusriven Methode
             SierpinskiTeppich(e.Graphics, solidBrush, bounds.X, bounds.Y, bounds.Width, bounds.Height, iteration);
@@ -44,7 +44,7 @@ namespace SierpinskiTeppich
 
             if(iteration == 0)
             {
-                rectangle.FillRectangle(Brushes.BlueViolet, x, y, width, height);
+                rectangle.FillRectangle(Brushes.BlanchedAlmond, x, y, width, height);
             }
             else
             {
