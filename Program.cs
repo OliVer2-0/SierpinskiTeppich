@@ -7,7 +7,7 @@ namespace SierpinskiTeppich
    
     class Sierpinski : Form
     {
-        int iteration = 0;
+        private int iteration = 0;
         
         public Sierpinski()
         {
@@ -20,6 +20,7 @@ namespace SierpinskiTeppich
         {
             Application.Run(new Sierpinski());
         }
+
         override protected void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -33,6 +34,7 @@ namespace SierpinskiTeppich
             
 
         }
+
         private void SierpinskiTeppich(Graphics g, Brush brush, Single x, Single y, Single width, Single height, int iteration)
         {
             // Rekursion
@@ -42,11 +44,11 @@ namespace SierpinskiTeppich
 
             if(iteration == 0)
             {
-                g.FillRectangle(Brushes.BlueViolet, x, y, width, height);
+                rectangle.FillRectangle(Brushes.BlueViolet, x, y, width, height);
             }
             else
             {
-                rectangle.FillRectangle(brush, Convert.ToInt16(width / 3.0), Convert.ToInt16(height / 3.0), Convert.ToInt16(width / 3.0), Convert.ToInt16(height / 3.0));
+                rectangle.FillRectangle(brush, Convert.ToInt16((x + width / 3.0)), Convert.ToInt16(y + height / 3.0), Convert.ToInt16(width / 3.0), Convert.ToInt16(height / 3.0));
 
                 float width1 = width / 3;
                 float xLeft = x;
@@ -71,6 +73,7 @@ namespace SierpinskiTeppich
             }
 
         }
+
         override protected void OnKeyDown(KeyEventArgs e)
         {
             base.OnKeyDown(e);
